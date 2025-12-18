@@ -1,3 +1,5 @@
+oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
+
 status is-login; and begin
 
     # Login shell initialisation
