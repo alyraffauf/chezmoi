@@ -1,0 +1,19 @@
+{
+  "auto_indent_on_paste": true,
+  "auto_update":  false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds":  1000
+    }
+  },
+  "features": {
+    "edit_prediction_provider":  "copilot"
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "preferred_line_length": 80,
+  "soft_wrap": "preferred_line_length",
+  "use_on_type_format": true,
+  "wrap_guides":  [80]
+}

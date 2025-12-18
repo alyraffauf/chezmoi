@@ -1,0 +1,11 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-p": "command_palette::Toggle",
+      "cmd-shift-p": "file_finder::Toggle",
+      "ctrl-p": "command_palette::Toggle",
+      "ctrl-shift-p": "file_finder::Toggle"
+    }
+  }
+]
