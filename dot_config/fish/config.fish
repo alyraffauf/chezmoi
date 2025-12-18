@@ -38,5 +38,5 @@ status is-interactive; and begin
 
     direnv hook fish | source
 
-    oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
+    oh-my-posh init fish | source
 end
