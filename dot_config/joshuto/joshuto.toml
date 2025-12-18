@@ -1,0 +1,9 @@
+xdg_open = true
+xdg_open_fork = true
+zoxide_update = true
+
+[display.sort]
+directories_first = true
+
+[preview]
+xdg_thumb_size = "xxlarge"
