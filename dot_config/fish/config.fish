@@ -21,8 +21,8 @@ status is-interactive; and begin
     # Interactive shell initialisation
 
     # Set up Homebrew environment if available
-    if test -x /home/linuxbrew/.linuxbrew//bin/brew
-       eval (/opt/homebrew/bin/brew shellenv)
+    if test -x /home/linuxbrew/.linuxbrew/bin/brew
+       eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     end
 
     if test -x /opt/homebrew/bin/brew
