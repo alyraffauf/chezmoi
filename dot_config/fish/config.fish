@@ -1,5 +1,3 @@
-oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
-
 status is-login; and begin
 
     # Login shell initialisation
@@ -21,9 +19,14 @@ status is-interactive; and begin
     alias tree 'eza --tree'
 
     # Interactive shell initialisation
+
     # Set up Homebrew environment if available
-    if command -v brew > /dev/null
-      eval (brew shellenv)
+    if test -x /home/linuxbrew/.linuxbrew//bin/brew
+       eval (/opt/homebrew/bin/brew shellenv)
+    end
+
+    if test -x /opt/homebrew/bin/brew
+       eval (/opt/homebrew/bin/brew shellenv)
     end
 
     # Set TERM for Ghostty terminal
@@ -34,4 +37,6 @@ status is-interactive; and begin
     zoxide init fish --cmd cd | source
 
     direnv hook fish | source
+
+    oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
 end
