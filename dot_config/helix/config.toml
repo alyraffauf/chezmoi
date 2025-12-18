@@ -1,0 +1,32 @@
+[editor]
+auto-completion = true
+auto-format = true
+auto-pairs = false
+auto-save = true
+color-modes = true
+cursorline = true
+text-width = 80
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+
+[editor.statusline]
+center = ["position-percentage"]
+
+[editor.whitespace.characters]
+newline = "↴"
+tab = "⇥"
