@@ -23,8 +23,6 @@ status is-interactive; and begin
     alias tree 'eza --tree'
 
     # Interactive shell initialisation
-    /nix/store/lc3zmvfh5cyzdgijm8f5sjgd0q3hl9pk-fzf-0.67.0/bin/fzf --fish | source
-
     # Set up Homebrew environment if available
     if command -v brew > /dev/null
       eval (brew shellenv)
