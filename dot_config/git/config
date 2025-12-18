@@ -1,0 +1,24 @@
+[color]
+	ui = true
+
+[core]
+	pager = "delta"
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[github]
+	user = "alyraffauf"
+
+[interactive]
+	diffFilter = "delta --color-only"
+
+[push]
+	autoSetupRemote = true
+
+[user]
+	email = "aly@aly.codes"
+	name = "Aly Raffauf"
