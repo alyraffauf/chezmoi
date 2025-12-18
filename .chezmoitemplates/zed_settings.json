@@ -8,6 +8,9 @@
     "model_parameters": []
   },
   "auto_indent_on_paste": true,
+  "auto_install_extensions": {
+    "one-dark-pro": true
+  },
   "auto_update": false,
   "autosave": {
     "after_delay": {
