@@ -141,7 +141,7 @@ visual:
       contrast: 100
   immersive:
     useAnimatedBackground: true
-    useAnimatedArtwork: false
+    useAnimatedArtwork: true
     backgroundType: default
     layoutType: solarium
     layoutTypePortrait: sonoma
@@ -315,7 +315,7 @@ advanced:
   disableLargeRequestOffloading: true
   testing:
     musicVideos: false
-    forceExplicit: false
+    forceExplicit: true
     floatingSearch: false
 connectivity:
   playbackNotifications: true
