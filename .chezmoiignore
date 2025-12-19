@@ -1,2 +1,8 @@
 Brewfile
 README.md
+{{- if ne .chezmoi.os "linux" }}
+.var/
+{{- end }}
+{{- if ne .chezmoi.os "darwin" }}
+Library/Application\ Support/
+{{- end }}
