@@ -1,0 +1,61 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+# Hash: {{ include ".chezmoiscripts/run_macos_defaults.sh.tmpl" | sha256sum }}
+# Data: {{ .macos_defaults | toJson | sha256sum }}
+
+set -euo pipefail
+
+restart_dock=false
+restart_finder=false
+restart_systemui=false
+
+{{- range .macos_defaults }}
+
+# Read current value
+current_val=$(defaults read "{{ .domain }}" "{{ .key }}" 2>/dev/null || echo "")
+
+# Normalize current value for comparison
+case "{{ .type }}" in
+    bool|boolean)
+        [[ "$current_val" == "1" ]] && current_val="true"
+        [[ "$current_val" == "0" ]] && current_val="false"
+        ;;
+    int|integer)
+        current_val=$(echo "$current_val" | tr -d ' ')
+        ;;
+esac
+
+# Only apply if different
+if [[ "$current_val" != "{{ .value }}" ]]; then
+    if defaults write "{{ .domain }}" "{{ .key }}" "-{{ .type }}" "{{ .value }}" 2>/dev/null; then
+        if [[ -n "$current_val" ]]; then
+            echo "[defaults] {{ .domain }}.{{ .key }}: $current_val → {{ .value }}"
+        else
+            echo "[defaults] {{ .domain }}.{{ .key }} = {{ .value }}"
+        fi
+        
+        # Mark apps for restart based on domain
+        case "{{ .domain }}" in
+            com.apple.dock) restart_dock=true ;;
+            com.apple.finder) restart_finder=true ;;
+            NSGlobalDomain) restart_systemui=true ;;
+        esac
+    else
+        echo "[defaults] ERROR: {{ .domain }}.{{ .key }} failed to set"
+    fi
+fi
+{{- end }}
+
+# Only restart applications if their settings changed
+if [[ "$restart_dock" == true ]]; then
+    killall Dock 2>/dev/null && echo "[defaults] restarted Dock"
+fi
+
+if [[ "$restart_finder" == true ]]; then
+    killall Finder 2>/dev/null && echo "[defaults] restarted Finder"
+fi
+
+if [[ "$restart_systemui" == true ]]; then
+    killall SystemUIServer 2>/dev/null && echo "[defaults] restarted SystemUIServer"
+fi
+{{ end -}}
