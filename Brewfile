@@ -1,6 +1,6 @@
 tap "valkyrie00/bbrew"
 brew "bat"
-brew "bbrew"
+brew "valkyrie00/bbrew/bbrew"
 brew "chezmoi"
 brew "direnv"
 brew "eza"
