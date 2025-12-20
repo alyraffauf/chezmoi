@@ -1,7 +1,5 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
-# Hash: {{ include ".chezmoiscripts/run_macos_defaults.sh.tmpl" | sha256sum }}
-# Data: {{ .macos_defaults | toJson | sha256sum }}
 
 set -euo pipefail
 
@@ -9,6 +7,7 @@ restart_dock=false
 restart_finder=false
 restart_systemui=false
 
+# Apply defaults
 {{- range .macos_defaults }}
 
 # Read current value
@@ -33,7 +32,7 @@ if [[ "$current_val" != "{{ .value }}" ]]; then
         else
             echo "[defaults] {{ .domain }}.{{ .key }} = {{ .value }}"
         fi
-        
+
         # Mark apps for restart based on domain
         case "{{ .domain }}" in
             com.apple.dock) restart_dock=true ;;
@@ -45,6 +44,28 @@ if [[ "$current_val" != "{{ .value }}" ]]; then
     fi
 fi
 {{- end }}
+
+# Handle dock apps
+# Dock apps require parsing aplist and are thus more complicated.
+current_dock=$(defaults read com.apple.dock persistent-apps 2>/dev/null | \
+  perl -nle 'print $1 if /_CFURLString.*"(.+?)"/' | \
+  sed 's|file://||g' | sed 's|%20| |g' | sed 's|/$||' | \
+  paste -sd '|' -)
+
+desired_dock="{{ range .macos_dock_apps }}{{ . }}|{{ end }}"
+desired_dock="${desired_dock%|}"
+
+if [[ "$current_dock" != "$desired_dock" ]]; then
+    defaults delete com.apple.dock persistent-apps 2>/dev/null || true
+    defaults write com.apple.dock persistent-apps -array
+
+    {{- range .macos_dock_apps }}
+    defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>{{ . }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+    {{- end }}
+
+    echo "[defaults] updated {{ len .macos_dock_apps }} dock apps"
+    restart_dock=true
+fi
 
 # Only restart applications if their settings changed
 if [[ "$restart_dock" == true ]]; then

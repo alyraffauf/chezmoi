@@ -12,7 +12,6 @@
       "type": "bool",
       "value": "true"
     },
-
     {
       "domain": "com.apple.dock",
       "key": "autohide",
@@ -97,7 +96,6 @@
       "type": "int",
       "value": "14"
     },
-
     {
       "domain": "com.apple.finder",
       "key": "_FXSortFoldersFirstOnDesktop",
@@ -170,7 +168,6 @@
       "type": "bool",
       "value": "true"
     },
-
     {
       "domain": "com.apple.Siri",
       "key": "ConfirmSiriInvokedViaEitherCmdTwice",
@@ -201,7 +198,6 @@
       "type": "int",
       "value": "1"
     },
-
     {
       "domain": "NSGlobalDomain",
       "key": "NSAutomaticSpellingCorrectionEnabled",
@@ -250,5 +246,20 @@
       "type": "bool",
       "value": "true"
     }
+  ],
+  "macos_dock_apps": [
+    "/System/Applications/Apps.app",
+    "/Applications/Firefox.app",
+    "/Applications/Google Chrome.app",
+    "/Applications/Signal.app",
+    "/Applications/Vesktop.app",
+    "/Applications/Slack.app",
+    "/Applications/Thunderbird.app",
+    "/Applications/Obsidian.app",
+    "/Applications/Zed.app",
+    "/Applications/Ghostty.app",
+    "/Applications/Cider.app",
+    "/Applications/Plexamp.app",
+    "/System/Applications/iPhone Mirroring.app"
   ]
 }
