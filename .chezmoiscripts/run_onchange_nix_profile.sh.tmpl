@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+{{- if eq .chezmoi.os "linux" }}
+nix profile install github:alyraffauf/aws-cvpn-client
+{{- end }}
