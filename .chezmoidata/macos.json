@@ -199,6 +199,12 @@
       "value": "1"
     },
     {
+      "domain": "com.apple.SoftwareUpdate",
+      "key": "AutomaticallyInstallMacOSUpdates",
+      "type": "bool",
+      "value": "true"
+    },
+    {
       "domain": "NSGlobalDomain",
       "key": "NSAutomaticSpellingCorrectionEnabled",
       "type": "bool",
