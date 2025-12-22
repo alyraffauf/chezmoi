@@ -101,7 +101,7 @@ audio:
       state: false
       lock: false
     lastNode: n1
-    firstNode: spatial
+    firstNode: n1
     opportunisticCorrection_state: OFF
     atmosphereRealizer1: false
     atmosphereRealizer1_value: NATURAL_STANDARD
