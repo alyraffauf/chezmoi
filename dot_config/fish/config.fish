@@ -34,9 +34,8 @@ status is-interactive; and begin
         set -gx TERM xterm-256color
     end
 
-    zoxide init fish --cmd cd | source
-
     direnv hook fish | source
-
+    fzf --fish | source
     oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
+    zoxide init fish --cmd cd | source
 end
