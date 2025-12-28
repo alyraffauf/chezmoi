@@ -32,9 +32,16 @@ status is-interactive; and begin
     if test -n "$homebrew_prefix"
         eval ($homebrew_prefix/bin/brew shellenv)
 
-        # Add uutils-coreutils to PATH if installed
         if test -d "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin"
             set -gx PATH "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin" $PATH
+        end
+
+        if test -d "$homebrew_prefix/opt/uutils-diffutils/libexec/uubin"
+            set -gx PATH "$homebrew_prefix/opt/uutils-diffutils/libexec/uubin" $PATH
+        end
+
+        if test -d "$homebrew_prefix/opt/uutils-findutils/libexec/uubin"
+            set -gx PATH "$homebrew_prefix/opt/uutils-findutils/libexec/uubin" $PATH
         end
     end
 
