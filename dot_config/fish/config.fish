@@ -36,10 +36,6 @@ status is-interactive; and begin
             set -gx PATH "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin" $PATH
         end
 
-        if test -d "$homebrew_prefix/opt/uutils-diffutils/libexec/uubin"
-            set -gx PATH "$homebrew_prefix/opt/uutils-diffutils/libexec/uubin" $PATH
-        end
-
         if test -d "$homebrew_prefix/opt/uutils-findutils/libexec/uubin"
             set -gx PATH "$homebrew_prefix/opt/uutils-findutils/libexec/uubin" $PATH
         end
