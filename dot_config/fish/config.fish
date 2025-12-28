@@ -21,12 +21,21 @@ status is-interactive; and begin
     # Interactive shell initialisation
 
     # Set up Homebrew environment if available
+    set -l homebrew_prefix ""
+
     if test -x /home/linuxbrew/.linuxbrew/bin/brew
-       eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+       set homebrew_prefix /home/linuxbrew/.linuxbrew
+    else if test -x /opt/homebrew/bin/brew
+       set homebrew_prefix /opt/homebrew
     end
 
-    if test -x /opt/homebrew/bin/brew
-       eval (/opt/homebrew/bin/brew shellenv)
+    if test -n "$homebrew_prefix"
+        eval ($homebrew_prefix/bin/brew shellenv)
+
+        # Add uutils-coreutils to PATH if installed
+        if test -d "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin"
+            set -gx PATH "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin" $PATH
+        end
     end
 
     # Set TERM for Ghostty terminal
