@@ -26,7 +26,6 @@ status is-interactive; and begin
         source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
     end
 
-
     # Set up Homebrew environment if available
     set -l homebrew_prefix ""
 
@@ -55,6 +54,7 @@ status is-interactive; and begin
 
     direnv hook fish | source
     fzf --fish | source
-    oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
+    # oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
+    starship init fish | source
     zoxide init fish --cmd cd | source
 end
