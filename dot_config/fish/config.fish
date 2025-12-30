@@ -21,6 +21,12 @@ status is-interactive; and begin
 
     # Interactive shell initialisation
 
+    # Set up nix
+    if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+        source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+    end
+
+
     # Set up Homebrew environment if available
     set -l homebrew_prefix ""
 
