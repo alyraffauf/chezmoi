@@ -10,14 +10,17 @@ status is-interactive; and begin
 
     # Aliases
     alias docker 'podman'
-    alias eza 'eza --icons auto --git --group-directories-first --header'
-    alias l 'eza -lah'
-    alias la 'eza -a'
-    alias ll 'eza -l'
-    alias lla 'eza -la'
-    alias ls eza
-    alias lt 'eza --tree'
-    alias tree 'eza --tree'
+
+    if type -q eza
+        alias eza 'eza --icons auto --git --group-directories-first --header'
+        alias l 'eza -lah'
+        alias la 'eza -a'
+        alias ll 'eza -l'
+        alias lla 'eza -la'
+        alias ls eza
+        alias lt 'eza --tree'
+        alias tree 'eza --tree'
+    end
 
     # Interactive shell initialisation
 
@@ -52,9 +55,19 @@ status is-interactive; and begin
         set -gx TERM xterm-256color
     end
 
-    direnv hook fish | source
-    fzf --fish | source
-    # oh-my-posh init fish --config ~/.config/oh-my-posh/config.json | source
-    starship init fish | source
-    zoxide init fish --cmd cd | source
+    if type -q direnv
+        direnv hook fish | source
+    end
+
+    if type -q fzf
+        fzf --fish | source
+    end
+
+    if type -q starship
+        starship init fish | source
+    end
+
+    if type -q zoxide
+        zoxide init fish --cmd cd | source
+    end
 end
