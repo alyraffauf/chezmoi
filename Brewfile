@@ -1,5 +1,6 @@
 brew "bat"
 brew "chezmoi"
+brew "devcontainer"
 brew "direnv"
 brew "eza"
 brew "fish"
