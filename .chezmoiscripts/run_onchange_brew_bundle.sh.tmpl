@@ -2,4 +2,9 @@
 
 # Brewfile hash: {{ include "Brewfile" | sha256sum }}
 
-brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+# Check if Homebrew is installed
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    /home/linuxbrew/.linuxbrew/bin/brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+elif [[ -x /opt/homebrew/bin/brew ]]; then
+    /opt/homebrew/bin/brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+fi

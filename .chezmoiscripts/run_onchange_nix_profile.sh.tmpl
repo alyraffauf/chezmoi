@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
 {{- if eq .chezmoi.os "linux" }}
-nix profile add github:alyraffauf/aws-cvpn-client
+nix=/nix/var/nix/profiles/default/bin/nix
+
+# Check if Nix is installed
+if [[ -x $nix ]]; then
+    $nix profile add github:alyraffauf/aws-cvpn-client
+fi
 {{- end }}
