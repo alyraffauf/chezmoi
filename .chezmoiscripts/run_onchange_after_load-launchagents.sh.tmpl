@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+# hash: {{ include "private_Library/LaunchAgents/com.local.KeyRemapping.plist" | sha256sum }}
+
+set -euo pipefail
+
+launchctl unload ~/Library/LaunchAgents/com.local.KeyRemapping.plist 2>/dev/null || true
+launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+echo "[launchagent] loaded com.local.KeyRemapping"
+{{ end -}}
