@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# GNOME settings hash: {{ include ".chezmoidata/gnome.json" | sha256sum }}
+
+# Only run on Linux with GNOME
+{{ if eq .chezmoi.os "linux" }}
+if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] && command -v dconf &> /dev/null; then
+    {{ range $setting := (include ".chezmoidata/gnome.json" | mustFromJson).settings }}
+    dconf write {{ $setting.key | quote }} {{ $setting.value | quote }}
+    {{ end }}
+fi
+{{ end }}

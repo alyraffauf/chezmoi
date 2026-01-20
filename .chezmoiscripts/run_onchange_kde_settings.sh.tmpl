@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# KDE settings hash: {{ include ".chezmoidata/kde.json" | sha256sum }}
+
+# Only run on Linux with KDE
+{{ if eq .chezmoi.os "linux" }}
+if [[ "$XDG_CURRENT_DESKTOP" == *"KDE"* ]] && command -v kwriteconfig6 &> /dev/null; then
+    {{ range $setting := (include ".chezmoidata/kde.json" | mustFromJson).settings }}
+    kwriteconfig6 --file {{ $setting.file | quote }} --group {{ $setting.group | quote }} --key {{ $setting.key | quote }} {{ $setting.value | quote }}
+    {{ end }}
+fi
+{{ end }}

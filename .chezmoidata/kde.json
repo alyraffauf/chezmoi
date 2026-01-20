@@ -1,0 +1,10 @@
+{
+  "settings": [
+    {
+      "file": "kxkbrc",
+      "group": "Layout",
+      "key": "Options",
+      "value": "ctrl:nocaps"
+    }
+  ]
+}
