@@ -35,13 +35,19 @@ cask "thunderbird"
 cask "todoist-app"
 cask "vesktop"
 cask "zed"
-flatpak "com.google.Chrome"
-flatpak "com.plexamp.Plexamp"
 flatpak "dev.vencord.Vesktop"
 flatpak "dev.zed.Zed"
 flatpak "md.obsidian.Obsidian"
-flatpak "org.mozilla.Thunderbird"
-flatpak "org.signal.Signal"
 flatpak "org.mozilla.firefox"
 mas "Bitwarden", id: 1352778147
 mas "Photomator", id: 1444636541
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
+# x86_64-only flatpaks
+flatpak "com.google.Chrome"
+flatpak "com.plexamp.Plexamp"
+flatpak "org.mozilla.Thunderbird"
+flatpak "org.signal.Signal"
+{{ else if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64") -}}
+# arm64 flatpak substitutes
+flatpak "org.chromium.Chromium"
+{{ end -}}
