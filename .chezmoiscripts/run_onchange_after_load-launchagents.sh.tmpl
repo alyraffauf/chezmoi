@@ -5,6 +5,9 @@
 set -euo pipefail
 
 launchctl unload ~/Library/LaunchAgents/com.local.KeyRemapping.plist 2>/dev/null || true
-launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
-echo "[launchagent] loaded com.local.KeyRemapping"
+if launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist 2>/dev/null; then
+    echo "[launchctl] loaded com.local.KeyRemapping"
+else
+    echo "[launchctl] ERROR: failed to load com.local.KeyRemapping"
+fi
 {{ end -}}

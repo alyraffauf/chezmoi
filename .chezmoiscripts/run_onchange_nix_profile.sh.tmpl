@@ -5,6 +5,11 @@ nix=/nix/var/nix/profiles/default/bin/nix
 
 # Check if Nix is installed
 if [[ -x $nix ]]; then
-    $nix profile add github:alyraffauf/aws-cvpn-client
+    echo "[nix] installing aws-cvpn-client..."
+    if $nix profile add github:alyraffauf/aws-cvpn-client 2>/dev/null; then
+        echo "[nix] installed aws-cvpn-client"
+    else
+        echo "[nix] ERROR: failed to install aws-cvpn-client"
+    fi
 fi
 {{- end }}

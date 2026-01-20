@@ -4,7 +4,17 @@
 
 # Check if Homebrew is installed
 if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-    /home/linuxbrew/.linuxbrew/bin/brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+    echo "[brew] running bundle install..."
+    if /home/linuxbrew/.linuxbrew/bin/brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"; then
+        echo "[brew] bundle install complete"
+    else
+        echo "[brew] ERROR: bundle install failed"
+    fi
 elif [[ -x /opt/homebrew/bin/brew ]]; then
-    /opt/homebrew/bin/brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+    echo "[brew] running bundle install..."
+    if /opt/homebrew/bin/brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"; then
+        echo "[brew] bundle install complete"
+    else
+        echo "[brew] ERROR: bundle install failed"
+    fi
 fi
