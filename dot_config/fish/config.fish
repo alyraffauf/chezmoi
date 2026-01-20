@@ -50,6 +50,11 @@ status is-interactive; and begin
         end
     end
 
+    # Add Go binaries to PATH if directory exists
+    if test -d "$HOME/go/bin"
+        set -gx PATH "$HOME/go/bin" $PATH
+    end
+
     # Set TERM for Ghostty terminal
     if test "$TERM_PROGRAM" = ghostty
         set -gx TERM xterm-256color
