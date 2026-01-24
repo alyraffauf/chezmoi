@@ -31,5 +31,12 @@
   "preferred_line_length": 80,
   "soft_wrap": "preferred_line_length",
   "use_on_type_format": true,
-  "wrap_guides": [80]
+  "wrap_guides": [80],
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "directoryFilters": ["-vendor"]
+      }
+    }
+  }
 }
