@@ -1,4 +1,8 @@
 {
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "show_edit_predictions": true,
   "theme": {
     "mode": "system",
     "light": "One Light",
