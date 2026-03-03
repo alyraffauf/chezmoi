@@ -1,0 +1,13 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.formatOnPaste": true,
+    "claudeCode.preferredLocation": "panel",
+    "editor.fontSize": 15,
+    "chat.editor.fontSize": 15,
+    "chat.fontSize": 15,
+    "git.autofetch": true,
+    "files.autoSaveDelay": 500,
+    "files.autoSaveWorkspaceFilesOnly": true
+}
