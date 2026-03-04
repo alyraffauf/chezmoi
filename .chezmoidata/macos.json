@@ -256,7 +256,7 @@
   "macos_dock_apps": [
     "/System/Applications/Apps.app",
     "/Applications/Firefox.app",
-    "/Applications/Google Chrome.app",
+    "/Applications/Helium.app",
     "/Applications/Signal.app",
     "/Applications/Vesktop.app",
     "/Applications/Slack.app",
