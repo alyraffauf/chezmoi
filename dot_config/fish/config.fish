@@ -55,6 +55,11 @@ status is-interactive; and begin
         set -gx PATH "$HOME/go/bin" $PATH
     end
 
+    # Add ~/.local/bin to PATH if directory exists
+    if test -d "$HOME/.local/bin"
+        set -gx PATH "$HOME/.local/bin" $PATH
+    end
+
     # Set TERM for Ghostty terminal
     if test "$TERM_PROGRAM" = ghostty
         set -gx TERM xterm-256color
