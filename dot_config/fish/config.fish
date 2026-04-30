@@ -9,7 +9,6 @@ status is-interactive; and begin
     # Abbreviations
 
     # Aliases
-    alias docker 'podman'
 
     if type -q eza
         alias eza 'eza --icons auto --git --group-directories-first --header'
