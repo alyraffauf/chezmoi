@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "linux" }}
 [edit]
-    command = "flatpak"
-    args = ["run", "dev.zed.Zed", "--wait"]
+    command = "zed"
+    args = ["--wait"]
 {{- else if eq .chezmoi.os "darwin" }}
 [edit]
     command = "zed"
