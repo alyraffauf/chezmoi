@@ -1,0 +1,22 @@
+Host pastoria
+  HostName pastoria
+  User root
+
+Host snowpoint
+  HostName snowpoint
+  User root
+
+Host solaceon
+  HostName solaceon
+  User root
+
+Host *
+  AddKeysToAgent no
+  Compression no
+  ControlMaster no
+  ControlPath ~/.ssh/master-%r@%n:%p
+  ControlPersist no
+  ForwardAgent no
+  HashKnownHosts no
+  ServerAliveCountMax 3
+  ServerAliveInterval 0
