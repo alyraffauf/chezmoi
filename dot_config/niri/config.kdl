@@ -33,6 +33,13 @@ output "AU Optronics 0x233D Unknown" {
     transform "normal"
 }
 
+output "Samsung Display Corp. 0x41AA Unknown" {
+    mode "2880x1800@120.001"
+    scale 1.667
+    transform "normal"
+    variable-refresh-rate
+}
+
 // https://niri-wm.github.io/niri/Configuration:-Key-Bindings
 binds {
     // Mod is Super on TTY, Alt when running as a winit window.
