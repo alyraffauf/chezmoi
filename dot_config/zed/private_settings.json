@@ -1,85 +1,111 @@
 {
+  "ssh_connections": [
+    {
+      "host": "jubilife",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/aly/src/cute.haus"],
+        },
+        {
+          "paths": ["/home/aly/src/nixcfg"],
+        },
+        {
+          "paths": ["/home/aly/src/nynx"],
+        },
+      ],
+    },
+  ],
   "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "mode": "auto",
+      },
+      "type": "registry",
+    },
     "opencode": {
       "default_config_options": {
-        "effort": "high",
-        "model": "opencode-go/deepseek-v4-pro"
+        "mode": "build",
+        "effort": "max",
+        "model": "opencode-go/deepseek-v4-pro",
       },
-      "type": "registry"
+      "favorite_config_option_values": {
+        "model": ["opencode-go/deepseek-v4-pro"],
+      },
+      "type": "registry",
     },
     "claude-acp": {
-      "type": "registry"
-    }
+      "default_config_options": {
+        "model": "default",
+      },
+      "type": "registry",
+    },
   },
   "proxy": "",
   "terminal": {
     "toolbar": {
-      "breadcrumbs": true
-    }
+      "breadcrumbs": true,
+    },
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "bottom_dock_layout": "left_aligned",
   "tabs": {
-    "git_status": true
+    "git_status": true,
   },
   "title_bar": {
     "show_branch_status_icon": true,
-    "button_layout": "platform_default"
+    "button_layout": "platform_default",
   },
   "search": {
-    "case_sensitive": true
+    "case_sensitive": true,
   },
   "semantic_tokens": "combined",
   "which_key": {
-    "enabled": true
+    "enabled": true,
   },
   "buffer_font_family": "CaskaydiaCove Nerd Font",
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
-  "edit_predictions": {
-    "provider": "copilot",
-    "mode": "subtle"
-  },
-  "show_edit_predictions": true,
   "theme": "One Dark Pro",
   "agent": {
     "dock": "right",
     "tool_permissions": {
-      "default": "allow"
+      "default": "allow",
     },
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
-    },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "auto_indent_on_paste": true,
   "auto_install_extensions": {
-    "one-dark-pro": true
+    "one-dark-pro": true,
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "minimap": {
-    "show": "auto"
+    "show": "auto",
   },
   "preferred_line_length": 80,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "prefer_line",
   "use_on_type_format": true,
   "wrap_guides": [80],
   "lsp": {
     "gopls": {
       "initialization_options": {
-        "directoryFilters": ["-vendor"]
-      }
-    }
-  }
+        "directoryFilters": ["-vendor"],
+      },
+    },
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ty", "ruff"],
+    },
+  },
 }
