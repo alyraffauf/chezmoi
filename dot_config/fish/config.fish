@@ -28,6 +28,11 @@ status is-interactive; and begin
         source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
     end
 
+    # Add user nix profile to PATH
+    if test -d "$HOME/.nix-profile/bin"
+        fish_add_path --prepend "$HOME/.nix-profile/bin"
+    end
+
     # Set up Homebrew environment if available
     set -l homebrew_prefix ""
 
