@@ -1,27 +1,11 @@
 ---
 name: literate-code
-description: Pragmatic coding standards focused on literate, readable code that newcomers can understand without prior codebase knowledge. Use when writing or editing any source code, reviewing code, or discussing implementation approaches.
+description: Literate, readable code standards. Use when writing, editing, reviewing, or discussing any source code.
 ---
 
 # Literate Code: Readable & Scalable Standards
 
 > **Readability first.** Code is read far more often than it is written. Write for the human who opens this file six months from now, or six minutes from now, with no context.
-
----
-
-## Core Principles
-
-| Principle | Rule |
-|-----------|------|
-| **Clarity** | Prefer the obvious over the clever. |
-| **Literacy** | Code should read like prose where possible. |
-| **SRP** | Each function and class does ONE thing, named precisely. |
-| **DRY** | Extract duplication; reuse meaningfully. |
-| **KISS** | The simplest solution that fully solves the problem. |
-| **YAGNI** | Do not build features or abstractions you do not need today. |
-| **Boy Scout** | Leave the code cleaner than you found it. |
-
----
 
 ## Naming
 
@@ -60,6 +44,8 @@ description: Pragmatic coding standards focused on literate, readable code that 
 | **Few arguments** | 0–2 is ideal. 3 is acceptable. More than 3 requires a struct/object parameter with named fields. |
 | **No hidden side effects** | A function called `checkUserStatus` should not also update the database. |
 | **Return early** | Use guard clauses to handle edge cases and errors at the top. |
+| **No clever one-liners** | Prefer explicit, multi-step logic over dense expressions that require deciphering. |
+| **Inline trivial helpers** | Do not extract a one-liner used only once. |
 
 ---
 
@@ -72,6 +58,7 @@ description: Pragmatic coding standards focused on literate, readable code that 
 | **Step-down rule** | Read from top to bottom: high-level functions first, helpers below. |
 | **Colocation** | Keep related code close. Avoid scattering a single concept across many files. |
 | **Whitespace as punctuation** | Use blank lines to separate logical paragraphs within a function. |
+| **Named constants** | Replace magic numbers with named constants (`MAX_RETRIES` not `3`). |
 
 ---
 
@@ -79,13 +66,15 @@ description: Pragmatic coding standards focused on literate, readable code that 
 
 > **Solve today's problem with tomorrow's load in mind.**
 
-- **Do not over-engineer speculative features.** YAGNI still applies. Do not build abstractions for requirements that do not exist yet.
-- **Do engineer boundaries that scale.** Design interfaces, data models, and failure modes that can grow without rewrites.
-- **Prefer configuration over hardcoding** for values likely to change: timeouts, limits, feature flags, URLs, thresholds.
-- **Consider the blast radius.** A change in one module should not cascade through the entire system. Prefer loose coupling.
-- **Handle errors explicitly.** Silent failures and swallowed exceptions become catastrophic at scale. Fail loudly, recover cleanly.
-- **Design for observability.** Logs, metrics, and tracing should be easy to add later. Do not block them with rigid structures.
-- **Avoid tight coupling to external services or libraries.** Wrap them so they can be replaced or mocked.
+| Principle | Guideline |
+|-----------|-----------|
+| **YAGNI** | Don't build abstractions for requirements that don't exist yet. |
+| **Scalable boundaries** | Design interfaces, data models, and failure modes that can grow without rewrites. |
+| **Configuration** | Prefer config over hardcoded values: timeouts, limits, feature flags, URLs, thresholds. |
+| **Loose coupling** | A change in one module shouldn't cascade. Prefer loose coupling. |
+| **Error handling** | Fail loudly, recover cleanly. Silent failures become catastrophic at scale. |
+| **Observability** | Logs, metrics, and tracing should be easy to add. Don't block with rigid structures. |
+| **External wrappers** | Wrap third-party dependencies so they can be replaced or mocked. |
 
 ---
 
@@ -105,21 +94,6 @@ description: Pragmatic coding standards focused on literate, readable code that 
 
 - **Use simple, direct clauses in comments.** Prefer imperative style. Write `Retry on timeout` not `This will retry the operation if a timeout occurs`. Comments should be brief and to the point.
 - **Do document surprises.** If the code must diverge from an obvious approach for a subtle reason, a brief comment is warranted.
-
----
-
-## Anti-Patterns
-
-| ❌ Don't | ✅ Do |
-|----------|-------|
-| Single-letter variables (`x`, `n`, `a`) unless idiomatic | `itemIndex`, `nodeCount`, `inputBuffer` |
-| Leetcode abbreviations (`curr`, `prev`, `res`, `ans`, `tmp`) | `currentNode`, `previousValue`, `result`, `answer`, `temporaryBuffer` |
-| Comment every line or block | Let names and structure speak |
-| Helper for a one-liner used once | Inline it |
-| Deep nesting | Guard clauses and early returns |
-| Magic numbers | Named constants |
-| God functions / classes | Split by responsibility |
-| Clever one-liners that require deciphering | Explicit, multi-step logic |
 
 ---
 
@@ -161,23 +135,13 @@ Before reporting a task complete, verify:
 - [ ] **Code works?** Did I verify the change compiles / runs / passes tests?
 - [ ] **Readable?** Would a new teammate understand this without explanation?
 - [ ] **No obvious comments?** Is the code self-documenting via names and structure?
-- [ ] **No single-letter shortcuts?** Are names literate and intention-revealing?
+- [ ] **No abbreviations?** No single-letter vars, no leetcode shortcuts (`curr`, `prev`, `res`, `tmp`).
+- [ ] **No magic numbers?** Named constants over bare literals (`MAX_RETRIES` not `3`).
+- [ ] **No deep nesting?** Prefer guard clauses and early returns over nested `if`.
+- [ ] **No god functions?** Each function does one thing, named precisely.
+- [ ] **No clever one-liners?** Explicit multi-step logic over dense expressions.
+- [ ] **No extracted trivialities?** Don't extract a one-liner used only once.
 - [ ] **Scale respected?** Did I avoid tunnel vision? Does this change hold up if usage grows 10x?
 - [ ] **Nothing forgotten?** Edge cases, error paths, cleanup handled?
 
 > **Rule:** If any check fails, fix it before completing.
-
----
-
-## Summary
-
-| Do | Don't |
-|----|-------|
-| Write code like prose | Write puzzles |
-| Name things fully and clearly | Abbreviate or obfuscate |
-| Let structure and names document logic | Add comments that repeat the code |
-| Fix bugs immediately | Explain the fix first |
-| Keep functions small and single-purpose | Build monolithic blocks |
-| Ask when requirements are unclear | Assume and over-engineer |
-
-> **Remember:** The reader may be unfamiliar with the codebase, the domain, or even programming. Write code that welcomes them in.
