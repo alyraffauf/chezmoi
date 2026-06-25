@@ -8,3 +8,8 @@ linux:
 macos:
   enableVibrancy: true
   vibrancyType: sidebar
+v8OptimizeForSize: true
+smoothScrolling: true
+useProxy: false
+proxyServer: ""
+proxyPAC: ""
