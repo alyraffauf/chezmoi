@@ -20,31 +20,16 @@ If flakes are off, pass `--extra-experimental-features 'nix-command flakes'`.
 
 ## How to Run a Package
 
-### Decision Tree
+**Default:** `scripts/nix-ensure <tool> [args]` — checks PATH first, fetches via Nix if missing. Use this for any standalone tool.
 
-```
-Need a tool/binary?
-├─ nix available?
-│  ├─ NO → use system tools
-│  └─ YES → Continue
-├─ Project action? (npm install, pip install, cargo build)
-│  ├─ YES → Flake project?
-│  │  ├─ YES → nix develop -c <cmd>
-│  │  │         # nix develop -c just build
-│  │  │         # nix develop -c npm test
-│  │  └─ NO  → nix shell <runtime> -c <language-pm> <cmd>
-│  │            # nix shell nixpkgs#nodejs -c 'npm ci && npm test'
-│  │            # nix shell nixpkgs#python3 -c 'pip install -r requirements.txt'
-│  └─ NO  → One-shot?
-│         ├─ YES → nix run nixpkgs#tool -- args
-│         │         # nix run nixpkgs#ripgrep -- -l TODO src/
-│         │         # nix run github:owner/repo -- args
-│         └─ NO  → nix shell nixpkgs#tool -c <command>
-│                   # nix shell nixpkgs#jq -c 'jq . file.json'
-│                   # nix shell nixpkgs#pkg1 nixpkgs#pkg2 -c '<cmd>'
-```
+When `nix-ensure` doesn't apply (flake dev shells, chaining language PMs):
 
-**Helper:** `scripts/nix-ensure <cmd> [args]` checks PATH first, then fetches via Nix. Use this by default.
+| Scenario | Command |
+|----------|---------|
+| Flake dev → build | `nix develop -c just build` |
+| Flake dev → test | `nix develop -c npm test` |
+| No flake, need npm | `nix shell nixpkgs#nodejs -c 'npm ci && npm test'` |
+| No flake, need pip | `nix shell nixpkgs#python3 -c 'pip install -r requirements.txt'` |
 
 ### The `-c` Rule
 
