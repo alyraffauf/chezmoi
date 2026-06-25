@@ -35,7 +35,7 @@ output "AU Optronics 0x233D Unknown" {
 
 output "Samsung Display Corp. 0x41AA Unknown" {
     mode "2880x1800@120.001"
-    scale 1.667
+    scale 1.8
     transform "normal"
     variable-refresh-rate
 }
