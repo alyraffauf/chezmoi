@@ -1,3 +1,4 @@
+encryption = "age"
 {{- if eq .chezmoi.os "linux" }}
 [edit]
     command = "zed"
@@ -7,6 +8,9 @@
     command = "zed"
     args = ["--wait"]
 {{- end }}
+
+[age]
+    passphrase = true
 
 [git]
     autoCommit = true
