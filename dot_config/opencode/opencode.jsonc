@@ -1,9 +1,4 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "attention": {
-    "enabled": true,
-    "notifications": true,
-  },
-  "mouse": true,
   "theme": "one-dark",
 }
