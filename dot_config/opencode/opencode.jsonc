@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-openai-codex-auth"],
   "theme": "one-dark",
 
   // Keep your normal primary model unchanged.
