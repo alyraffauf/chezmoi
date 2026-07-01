@@ -1,4 +1,21 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "one-dark",
+
+  // Keep your normal primary model unchanged.
+  // "model": "your-provider/your-main-model",
+
+  // Used for lightweight internal tasks such as title generation.
+  "small_model": "opencode/deepseek-v4-flash-free",
+
+  // Override only these built-in subagents.
+  "agent": {
+    "explore": {
+      "model": "opencode/deepseek-v4-flash-free",
+    },
+
+    "scout": {
+      "model": "opencode/deepseek-v4-flash-free",
+    },
+  },
 }
