@@ -1,4 +1,36 @@
 {
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": false
+    }
+  },
+  "outline_panel": {
+    "default_width": 240.0
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false
+  },
+  "debugger": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": false
+  },
+  "prettier": {
+    "allowed": true
+  },
+  "default_open_behavior": "new_window",
+  "buffer_line_height": "standard",
+  "collaboration_panel": {
+    "button": false
+  },
+  "icon_theme": "Zed (Default)",
+  "allow_rewrap": "anywhere",
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "use_smartcase_search": true,
+  "cli_default_open_behavior": "new_window",
   "ssh_connections": [
     {
       "host": "jubilife",
@@ -43,26 +75,38 @@
   },
   "proxy": "",
   "terminal": {
+    "scrollbar": {
+      "show": "auto"
+    },
+    "shell": "system",
+    "font_family": "CaskaydiaCove Nerd Font",
     "toolbar": {
       "breadcrumbs": true,
     },
   },
   "git_panel": {
-    "dock": "left",
+    "tree_view": true,
+    "default_width": 240.0,
+    "dock": "right",
   },
   "project_panel": {
-    "dock": "left",
+    "hide_root": false,
+    "default_width": 240.0,
+    "entry_spacing": "standard",
+    "hide_gitignore": false,
+    "dock": "right",
   },
   "bottom_dock_layout": "left_aligned",
   "tabs": {
     "git_status": true,
   },
   "title_bar": {
+    "show_menus": false,
     "show_branch_status_icon": true,
     "button_layout": "platform_default",
   },
   "search": {
-    "case_sensitive": true,
+    "case_sensitive": false,
   },
   "semantic_tokens": "combined",
   "which_key": {
@@ -72,9 +116,18 @@
   "session": {
     "trust_all_worktrees": true,
   },
-  "theme": "One Dark Pro",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
   "agent": {
-    "dock": "right",
+    "auto_compact": {
+      "threshold": "70%"
+    },
+    "show_turn_stats": false,
+    "thinking_display": "always_collapsed",
+    "dock": "left",
     "tool_permissions": {
       "default": "allow",
     },
@@ -93,7 +146,7 @@
     "show": "auto",
   },
   "preferred_line_length": 80,
-  "soft_wrap": "prefer_line",
+  "soft_wrap": "bounded",
   "use_on_type_format": true,
   "wrap_guides": [80],
   "lsp": {
