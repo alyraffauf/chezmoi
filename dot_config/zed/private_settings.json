@@ -68,6 +68,7 @@
     },
     "claude-acp": {
       "default_config_options": {
+        "mode": "bypassPermissions",
         "model": "default",
       },
       "type": "registry",
@@ -122,6 +123,10 @@
     "dark": "One Dark"
   },
   "agent": {
+    "sandbox_permissions": {
+      "allow_all_hosts": true
+    },
+    "play_sound_when_agent_done": "never",
     "auto_compact": {
       "threshold": "70%"
     },
