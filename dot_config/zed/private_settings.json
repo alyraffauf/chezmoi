@@ -123,7 +123,7 @@
     "dark": "One Dark",
   },
   "agent": {
-    "commit_message_instructions": "Follow existing commit message scheme.",
+    "commit_message_instructions": "Follow existing commit message scheme. Limit message to one sentence.",
     "commit_message_model": {
       "provider": "openrouter",
       "model": "deepseek/deepseek-v4-flash",
