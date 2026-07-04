@@ -1,33 +1,33 @@
 {
   "git": {
     "inline_blame": {
-      "show_commit_summary": false
-    }
+      "show_commit_summary": false,
+    },
   },
   "outline_panel": {
-    "default_width": 240.0
+    "default_width": 240.0,
   },
   "tab_bar": {
-    "show_pinned_tabs_in_separate_row": false
+    "show_pinned_tabs_in_separate_row": false,
   },
   "debugger": {
-    "button": false
+    "button": false,
   },
   "diagnostics": {
-    "button": false
+    "button": false,
   },
   "prettier": {
-    "allowed": true
+    "allowed": true,
   },
   "default_open_behavior": "new_window",
   "buffer_line_height": "standard",
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "icon_theme": "Zed (Default)",
   "allow_rewrap": "anywhere",
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "use_smartcase_search": true,
   "cli_default_open_behavior": "new_window",
@@ -77,12 +77,12 @@
   "proxy": "",
   "terminal": {
     "scrollbar": {
-      "show": "auto"
+      "show": "auto",
     },
     "shell": "system",
     "font_family": "CaskaydiaCove Nerd Font",
     "toolbar": {
-      "breadcrumbs": true,
+      "breadcrumbs": false,
     },
   },
   "git_panel": {
@@ -120,15 +120,23 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "agent": {
+    "commit_message_instructions": "Follow existing commit message scheme.",
+    "commit_message_model": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v4-flash",
+    },
+    "expand_edit_card": false,
+    "single_file_review": true,
+    "expand_terminal_card": false,
     "sandbox_permissions": {
-      "allow_all_hosts": true
+      "allow_all_hosts": true,
     },
     "play_sound_when_agent_done": "never",
     "auto_compact": {
-      "threshold": "70%"
+      "threshold": "70%",
     },
     "show_turn_stats": false,
     "thinking_display": "always_collapsed",
