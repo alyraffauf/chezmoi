@@ -1,6 +1,6 @@
 ---
 name: gh-cli
-description: Standardize all GitHub interactions via the GitHub CLI (`gh`) instead of ad-hoc URLs, UI clicks, or direct REST API calls. Use when you need to read or change GitHub state (repos, issues, pull requests, reviews, check status, Actions workflows/runs, releases, labels, milestones, discussions, gists) and want deterministic output (prefer `--json` + `--jq`). Also use when the user provides a GitHub URL, including deep links like `https://github.com/OWNER/REPO/pull/123`, `.../issues/123`, `.../pull/123/files`, or comment permalinks like `#issuecomment-...`, and you need to fetch the underlying PR/issue/thread and reply.
+description: Standardize all GitHub work via `gh` CLI (repos, issues, PRs, reviews, Actions, labels, releases) — never UI clicks or raw REST. Use `--json`/`--jq` for deterministic output. Trigger on any GitHub URL (incl. deep links like /pull/123, /issues/123, #issuecomment-…).
 ---
 
 # GitHub `gh` CLI
