@@ -1,5 +1,9 @@
 {
-  "model": "sonnet",
+  "model": "opus[1m]",
   "effortLevel": "high",
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  }
 }
