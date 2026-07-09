@@ -1,4 +1,45 @@
 {
+  "language_models": {
+    "openai_compatible": {
+      "Umans": {
+        "api_url": "https://api.code.umans.ai/v1",
+        "available_models": [
+          {
+            "name": "umans-kimi-k2.7",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "reasoning_effort": "high",
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+              "max_tokens_parameter": true
+            }
+          },
+          {
+            "name": "umans-glm-5.2",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "reasoning_effort": "xhigh",
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+              "max_tokens_parameter": false
+            }
+          }
+        ]
+      }
+    }
+  },
   "git": {
     "inline_blame": {
       "show_commit_summary": false
@@ -24,7 +65,11 @@
   "collaboration_panel": {
     "button": false
   },
-  "icon_theme": "Zed (Default)",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
   "allow_rewrap": "anywhere",
   "edit_predictions": {
     "mode": "subtle"
@@ -59,7 +104,7 @@
       "default_config_options": {
         "mode": "build",
         "effort": "max",
-        "model": "opencode-go/deepseek-v4-pro"
+        "model": "umans-ai-coding-plan/umans-glm-5.2"
       },
       "favorite_config_option_values": {
         "model": ["opencode-go/deepseek-v4-pro"]
@@ -69,7 +114,7 @@
     "claude-acp": {
       "default_config_options": {
         "mode": "bypassPermissions",
-        "model": "default"
+        "model": "opus"
       },
       "type": "registry"
     }
@@ -118,11 +163,18 @@
     "trust_all_worktrees": true
   },
   "theme": {
-    "mode": "system",
+    "mode": "light",
     "light": "One Light",
     "dark": "One Dark"
   },
   "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "effort": "xhigh",
+      "provider": "Umans",
+      "model": "umans-glm-5.2",
+      "enable_thinking": true
+    },
     "commit_message_instructions": "Follow the repo's existing commit message scheme. Limit message to one sentence. All lower case, prefix with location/feature affected by the change. Be curt yet still descriptive.",
     "commit_message_model": {
       "provider": "openrouter",
