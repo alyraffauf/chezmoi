@@ -1,8 +1,9 @@
 model:
-  default: deepseek-v4-flash-free
-  provider: opencode-zen
+  default: gpt-5.6-luna
+  provider: openai-codex
 agent:
   max_turns: 150
+  service_tier: normal
   verbose: false
   reasoning_effort: xhigh
   personalities:
@@ -95,6 +96,8 @@ display:
   long_running_notifications: true
   busy_ack_detail: true
   background_process_notifications: all
+dashboard:
+  theme: mono
 tts:
   provider: elevenlabs
   elevenlabs:
@@ -200,6 +203,13 @@ known_plugin_toolsets:
     - spotify
 image_gen:
   use_gateway: true
+plugins:
+  enabled:
+    - web-ddgs
+    - web-exa
+  disabled: []
+approvals:
+  mode: smart
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
