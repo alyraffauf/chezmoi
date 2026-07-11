@@ -85,3 +85,6 @@ status is-interactive; and begin
         zoxide init fish --cmd cd | source
     end
 end
+
+# Hermes Agent — ensure ~/.local/bin is on PATH
+fish_add_path "$HOME/.local/bin"
