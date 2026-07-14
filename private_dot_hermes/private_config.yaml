@@ -5,7 +5,7 @@ agent:
   max_turns: 150
   service_tier: normal
   verbose: false
-  reasoning_effort: xhigh
+  reasoning_effort: medium
   personalities:
     helpful: You are a helpful, friendly AI assistant.
     concise: You are a concise assistant. Keep responses brief and to the point.
@@ -82,6 +82,10 @@ compression:
   codex_app_server_auto: native
 prompt_caching:
   cache_ttl: 5m
+auxiliary:
+  title_generation:
+    provider: opencode-zen
+    model: deepseek-v4-flash-free
 display:
   compact: false
   personality: catgirl
@@ -91,6 +95,13 @@ display:
   streaming: true
   skin: default
   interim_assistant_messages: true
+  platforms:
+    photon:
+      streaming: false
+      interim_assistant_messages: false
+      tool_progress: false
+      long_running_notifications: false
+      busy_ack_detail: false
   tool_progress: all
   cleanup_progress: false
   long_running_notifications: true
@@ -98,6 +109,7 @@ display:
   background_process_notifications: all
 dashboard:
   theme: mono
+  font: system-sans
 tts:
   provider: elevenlabs
   elevenlabs:
@@ -126,6 +138,9 @@ skills:
   external_dirs:
     - ~/.agents/skills
   creation_nudge_interval: 15
+approvals:
+  mode: smart
+  destructive_slash_confirm: false
 command_allowlist:
   - script execution via -e/-c flag
   - execute_code
@@ -198,6 +213,10 @@ platforms:
     enabled: false
   signal:
     enabled: false
+  photon:
+    enabled: true
+  whatsapp:
+    enabled: false
 known_plugin_toolsets:
   cli:
     - spotify
@@ -208,8 +227,6 @@ plugins:
     - web-ddgs
     - web-exa
   disabled: []
-approvals:
-  mode: smart
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
