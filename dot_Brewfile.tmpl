@@ -1,4 +1,4 @@
-brew "bat"
+tap "alyraffauf/tap", trusted: true
 brew "bun"
 brew "chezmoi"
 brew "cloudflared"
@@ -23,8 +23,6 @@ brew "uutils-coreutils"
 brew "uutils-diffutils"
 brew "uutils-findutils"
 brew "zoxide"
-cask "aws-vpn-client"
-cask "claude-code"
 cask "firefox"
 cask "font-adwaita"
 cask "font-caskaydia-cove-nerd-font"
@@ -35,24 +33,29 @@ cask "google-chrome"
 cask "obsidian"
 cask "plexamp"
 cask "signal"
-cask "slack"
 cask "syncthing-app"
 cask "thunderbird"
 cask "todoist-app"
 cask "vesktop"
 cask "zed"
 flatpak "dev.vencord.Vesktop"
-flatpak "md.obsidian.Obsidian"
 flatpak "org.mozilla.firefox"
 mas "Bitwarden", id: 1352778147
 mas "Photomator", id: 1444636541
 {{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
-# x86_64-only flatpaks
+# x86_64-only
 flatpak "com.google.Chrome"
 flatpak "com.plexamp.Plexamp"
-flatpak "org.mozilla.Thunderbird"
+flatpak "org.mozilla.thunderbird"
 flatpak "org.signal.Signal"
+cask "alyraffauf/tap/zed-linux"
+cask "alyraffauf/tap/helium-linux"
+cask "alyraffauf/tap/ghostty-linux"
+cask "alyraffauf/tap/obsidian-linux"
+cask "alyraffauf/tap/todoist-linux"
+cask "alyraffauf/tap/visual-studio-code-linux"
+cask "alyraffauf/tap/opencode-desktop-linux"
 {{ else if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64") -}}
-# arm64 flatpak substitutes
+# arm64 substitutes
 flatpak "org.chromium.Chromium"
 {{ end -}}
