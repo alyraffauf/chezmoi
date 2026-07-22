@@ -28,7 +28,7 @@
       "domain": "com.apple.dock",
       "key": "minimize-to-application",
       "type": "bool",
-      "value": "true"
+      "value": "false"
     },
     {
       "domain": "com.apple.dock",
@@ -52,7 +52,7 @@
       "domain": "com.apple.dock",
       "key": "show-recents",
       "type": "bool",
-      "value": "false"
+      "value": "true"
     },
     {
       "domain": "com.apple.dock",
@@ -255,12 +255,9 @@
   ],
   "macos_dock_apps": [
     "/System/Applications/Apps.app",
-    "/Applications/Firefox.app",
     "/Applications/Helium.app",
     "/Applications/Signal.app",
     "/Applications/Vesktop.app",
-    "/Applications/Slack.app",
-    "/Applications/Thunderbird.app",
     "/Applications/Obsidian.app",
     "/Applications/Zed.app",
     "/Applications/Ghostty.app",
