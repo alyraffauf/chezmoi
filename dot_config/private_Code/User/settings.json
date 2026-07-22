@@ -9,5 +9,11 @@
     "chat.fontSize": 15,
     "git.autofetch": true,
     "files.autoSaveDelay": 500,
-    "files.autoSaveWorkspaceFilesOnly": true
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "chat.disableAIFeatures": true,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.podmancompose",
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.iconTheme": "catppuccin-frappe"
 }
