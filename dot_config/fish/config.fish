@@ -6,8 +6,6 @@ end
 
 status is-interactive; and begin
 
-    # Abbreviations
-
     # Aliases
 
     if type -q eza
@@ -54,14 +52,20 @@ status is-interactive; and begin
         end
     end
 
-    # Add Go binaries to PATH if directory exists
-    if test -d "$HOME/go/bin"
-        set -gx PATH "$HOME/go/bin" $PATH
-    end
+    set -l path_dirs \
+        "$HOME/go/bin" \
+        "$HOME/.local/bin" \
+        "$HOME/.bun/bin" \
+        "$HOME/.cargo/bin" \
+        "$HOME/.local/share/pnpm" \
+        "$HOME/.deno/bin" \
+        "$HOME/.volta/bin" \
+        "$HOME/.npm-global/bin"
 
-    # Add ~/.local/bin to PATH if directory exists
-    if test -d "$HOME/.local/bin"
-        set -gx PATH "$HOME/.local/bin" $PATH
+    for dir in $path_dirs
+        if test -d "$dir"
+            set -gx PATH "$dir" $PATH
+        end
     end
 
     # Set TERM for Ghostty terminal
@@ -85,6 +89,3 @@ status is-interactive; and begin
         zoxide init fish --cmd cd | source
     end
 end
-
-# Hermes Agent — ensure ~/.local/bin is on PATH
-fish_add_path "$HOME/.local/bin"
