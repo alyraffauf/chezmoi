@@ -40,7 +40,7 @@
       "domain": "com.apple.dock",
       "key": "orientation",
       "type": "string",
-      "value": "left"
+      "value": "bottom"
     },
     {
       "domain": "com.apple.dock",
