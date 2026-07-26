@@ -1,4 +1,15 @@
 encryption = "age"
+[age]
+    identities = [
+        "{{ .chezmoi.homeDir }}/.ssh/id_ed25519",
+    ]
+    recipients = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBdCjQKKktRc6DXvVQnTo9xEMm5ZZj+EGfewg1mwTbaM aly@petalburg",
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDm4T5eCKOtMERpFYOccN/M0Hla2q9cGyQL1hWLsXZKU aly@fortree",
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEza8l5QxWOrSedLJVMc9xXxKnJhOREKQMf61uBgEYk0 aly@eterna",
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHQW3A2E57TuybFXybSk/KUC/rlUR7gICQ8oBAKHwwVK aly@pacifidlog",
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3YdXgLFwvyVAzj3CpqCf079SEhX3EzNEu2rFR3Bbyb aly@jubilife",
+    ]
 {{- if eq .chezmoi.os "linux" }}
 [edit]
     command = "zed"
@@ -8,9 +19,6 @@ encryption = "age"
     command = "zed"
     args = ["--wait"]
 {{- end }}
-
-[age]
-    passphrase = true
 
 [git]
     autoCommit = true
