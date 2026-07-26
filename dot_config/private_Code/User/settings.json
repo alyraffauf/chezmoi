@@ -18,10 +18,16 @@
     "claudeCode.preferredLocation": "panel",
     "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
     "containers.orchestratorClient": "com.microsoft.visualstudio.containers.orchestrators.podmancompose",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "editor.formatOnPaste": true,
     "files.autoSaveDelay": 500,
     "files.autoSaveWorkspaceFilesOnly": true,
     "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.editor.editorActionsLocation": "titleBar"
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "ansible.validation.lint.autoFixOnSave": true,
+    "python.analysis.autoFormatStrings": true,
+    "editor.tabCompletion": "on",
+    "github.copilot.completions.chat.enabled": true
 }
