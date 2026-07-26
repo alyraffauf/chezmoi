@@ -71,7 +71,6 @@ mas "NaviBeat", id: 6763518834
 mas "Photomator", id: 1444636541
 npm "wispctl"
 uv "atbbs"
-vcode "sst-dev.opencode"
 vscode "bbenoist.nix"
 vscode "catppuccin.catppuccin-vsc"
 vscode "catppuccin.catppuccin-vsc-icons"
@@ -91,3 +90,4 @@ vscode "openai.chatgpt"
 vscode "oven.bun-vscode"
 vscode "redhat.ansible"
 vscode "redhat.vscode-yaml"
+vscode "sst-dev.opencode"
