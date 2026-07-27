@@ -1,4 +1,6 @@
 tap "alyraffauf/tap", trusted: true
+tap "anomalyco/tap", trusted: true
+tap "charmbracelet/tap", trusted: true
 tap "lucasgelfond/zerobrew", trusted: true
 tap "oven-sh/bun", trusted: true
 tap "charmbracelet/tap", trusted: true
@@ -34,6 +36,13 @@ brew "uutils-findutils"
 brew "uv"
 brew "zellij"
 brew "zoxide"
+cask "alyraffauf/tap/ghostty-linux"
+cask "alyraffauf/tap/helium-linux"
+cask "alyraffauf/tap/obsidian-linux"
+cask "alyraffauf/tap/opencode-desktop-linux"
+cask "alyraffauf/tap/todoist-linux"
+cask "alyraffauf/tap/visual-studio-code-linux"
+cask "alyraffauf/tap/zed-linux"
 cask "chatgpt"
 cask "firefox"
 cask "font-adwaita"
@@ -64,13 +73,13 @@ mas "Photomator", id: 1444636541
 npm "wispctl"
 uv "atbbs"
 vscode "ankurmathur.opencode-provider-bridge"
-vscode "bbenoist.nix"
 vscode "catppuccin.catppuccin-vsc"
 vscode "catppuccin.catppuccin-vsc-icons"
 vscode "esbenp.prettier-vscode"
 vscode "gleam.gleam"
 vscode "golang.go"
 vscode "hashicorp.terraform"
+vscode "jnoortheen.nix-ide"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
@@ -84,12 +93,5 @@ vscode "oven.bun-vscode"
 vscode "redhat.ansible"
 vscode "redhat.vscode-yaml"
 vscode "sst-dev.opencode"
-{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
-cask "alyraffauf/tap/ghostty-linux"
-cask "alyraffauf/tap/helium-linux"
-cask "alyraffauf/tap/obsidian-linux"
-cask "alyraffauf/tap/opencode-desktop-linux"
-cask "alyraffauf/tap/todoist-linux"
-cask "alyraffauf/tap/visual-studio-code-linux"
-cask "alyraffauf/tap/zed-linux"
 {{ end -}}
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
