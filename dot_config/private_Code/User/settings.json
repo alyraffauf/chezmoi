@@ -29,5 +29,7 @@
     "ansible.validation.lint.autoFixOnSave": true,
     "python.analysis.autoFormatStrings": true,
     "editor.tabCompletion": "on",
-    "github.copilot.completions.chat.enabled": true
+    "github.copilot.completions.chat.enabled": true,
+    "catppuccin.italicKeywords": false,
+    "catppuccin.italicComments": false
 }
