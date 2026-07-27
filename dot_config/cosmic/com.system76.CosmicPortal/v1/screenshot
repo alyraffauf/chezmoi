@@ -1,0 +1,5 @@
+(
+    save_location: Pictures,
+    choice: Output(None),
+    last_rectangle: None,
+)
