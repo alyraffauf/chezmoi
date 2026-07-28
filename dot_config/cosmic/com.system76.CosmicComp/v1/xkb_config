@@ -1,8 +1,8 @@
 (
     rules: "",
     model: "",
-    layout: "us",
-    variant: "altgr-intl",
+    layout: "us,us",
+    variant: "altgr-intl,",
     options: Some(",caps:ctrl_modifier"),
     repeat_delay: 600,
     repeat_rate: 25,
