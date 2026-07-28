@@ -217,6 +217,8 @@ platforms:
     enabled: true
   whatsapp:
     enabled: false
+  api_server:
+    enabled: false
 known_plugin_toolsets:
   cli:
     - spotify
@@ -224,6 +226,7 @@ image_gen:
   use_gateway: true
 plugins:
   enabled:
+    - herdr-agent-state
     - web-ddgs
     - web-exa
   disabled: []
