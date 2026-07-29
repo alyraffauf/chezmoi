@@ -1,9 +1,23 @@
 {
-  "model": "opus[1m]",
-  "effortLevel": "high",
-  "tui": "fullscreen",
   "agentPushNotifEnabled": true,
+  "effortLevel": "high",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
-  }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash '/home/aly/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
+  "model": "opus[1m]",
+  "tui": "fullscreen"
 }
