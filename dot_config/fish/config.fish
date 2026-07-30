@@ -17,6 +17,7 @@ status is-interactive; and begin
         alias ls eza
         alias lt 'eza --tree'
         alias tree 'eza --tree'
+        alias grep 'grep --color=auto'
     end
 
     # Interactive shell initialisation
