@@ -49,11 +49,11 @@ status is-interactive; and begin
         eval ($homebrew_prefix/bin/brew shellenv)
 
         if test -d "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin"
-            set -gx PATH "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin" $PATH
+            fish_add_path --global --prepend --move "$homebrew_prefix/opt/uutils-coreutils/libexec/uubin"
         end
 
         if test -d "$homebrew_prefix/opt/uutils-findutils/libexec/uubin"
-            set -gx PATH "$homebrew_prefix/opt/uutils-findutils/libexec/uubin" $PATH
+            fish_add_path --global --prepend --move "$homebrew_prefix/opt/uutils-findutils/libexec/uubin"
         end
     end
 
