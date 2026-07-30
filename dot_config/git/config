@@ -16,15 +16,64 @@
 [interactive]
 	diffFilter = "delta --color-only"
 
-[push]
-	autoSetupRemote = true
-
 [user]
 	email = "aly@aly.codes"
 	name = "Aly Raffauf"
+
 [credential "https://github.com"]
-	helper = 
-	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+	helper =
+	helper = !gh auth git-credential
+
 [credential "https://gist.github.com"]
-	helper = 
-	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+	helper =
+	helper = !gh auth git-credential
+
+[init]
+	defaultBranch = main
+
+[fetch]
+	prune = true
+	pruneTags = true
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+	updateRefs = true
+
+[push]
+	autoSetupRemote = true
+	followTags = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[merge]
+	conflictStyle = zdiff3
+
+[diff]
+	algorithm = histogram
+	colorMoved = zebra
+
+[status]
+	showUntrackedFiles = all
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
+[help]
+	autocorrect = prompt
+
+[alias]
+	s = status -sb
+	l = log --oneline --graph --decorate
+	ll = log --graph --format=format:'%C(auto)%h %s %C(dim)(%an, %ar)%Creset' --all
+	amend = commit --amend --no-edit
+	undo = reset --soft HEAD^
+	gone = !git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs -r git branch -d
