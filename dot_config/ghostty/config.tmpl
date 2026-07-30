@@ -1,11 +1,22 @@
-# Shared Ghostty configuration.
-#window-decoration = client
+# Shared
 theme = Catppuccin Frappe
 notify-on-command-finish = unfocused
+tab-inherit-working-directory = false
+window-inherit-working-directory
+
+## Fonts
+font-family = CaskaydiaCove Nerd Font
 
 {{- if eq .chezmoi.os "darwin" }}
-# macOS-only glass effect and global quick terminal.
+# macOS-only config
 background-blur = true
 background-opacity = 0.75
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 {{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+# Linux-only config
+gtk-titlebar-style = tabs
+window-theme = dark
+linux-cgroup = always
+{{- end}}
