@@ -57,26 +57,20 @@ status is-interactive; and begin
         end
     end
 
-    set -l path_dirs \
+    for dir in \
         "$HOME/go/bin" \
         "$HOME/.local/bin" \
         "$HOME/.bun/bin" \
         "$HOME/.cargo/bin" \
         "$HOME/.local/share/pnpm" \
-        "$HOME/.deno/bin" \
-        "$HOME/.volta/bin" \
-        "$HOME/.npm-global/bin"
-
-    for dir in $path_dirs
-        if test -d "$dir"
-            set -gx PATH "$dir" $PATH
-        end
+        "$HOME/.deno/bin"
+        test -d "$dir"; and fish_add_path --prepend --move "$dir"
     end
 
     # Set TERM for Ghostty terminal
-    if test "$TERM_PROGRAM" = ghostty
-        set -gx TERM xterm-256color
-    end
+    # if test "$TERM_PROGRAM" = ghostty
+        # set -gx TERM xterm-256color
+    # end
 
     if type -q direnv
         direnv hook fish | source
