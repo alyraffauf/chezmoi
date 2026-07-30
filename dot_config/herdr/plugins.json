@@ -197,6 +197,139 @@
     }
   },
   {
+    "plugin_id": "herdr.collie",
+    "name": "Collie",
+    "version": "0.20.1",
+    "min_herdr_version": "0.7.0",
+    "description": "Mobile web UI to monitor and reply to your agent herd, served over Tailscale",
+    "manifest_path": "/var/home/aly/.config/herdr/plugins/github/herdr.collie-1edf0e1e987e/herdr-plugin.toml",
+    "plugin_root": "/var/home/aly/.config/herdr/plugins/github/herdr.collie-1edf0e1e987e",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "build"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "restart",
+        "title": "Restart web bridge",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "restart"
+        ]
+      },
+      {
+        "id": "start",
+        "title": "Start web bridge",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "start"
+        ]
+      },
+      {
+        "id": "status",
+        "title": "Bridge status",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "status"
+        ]
+      },
+      {
+        "id": "stop",
+        "title": "Stop web bridge",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "stop"
+        ]
+      },
+      {
+        "id": "uninstall",
+        "title": "Uninstall web bridge (remove service)",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "uninstall"
+        ]
+      },
+      {
+        "id": "update",
+        "title": "Update plugin",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "update"
+        ]
+      },
+      {
+        "id": "url",
+        "title": "Show bridge URL",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "url"
+        ]
+      },
+      {
+        "id": "version",
+        "title": "Show version",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/collie-ctl.sh",
+          "version"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "AltanS",
+      "repo": "collie",
+      "resolved_commit": "c674af51bdfd2212148cec4c001c96a990e299d2",
+      "managed_path": "/home/aly/.config/herdr/plugins/github/herdr.collie-1edf0e1e987e",
+      "installed_unix_ms": 1785353691751
+    }
+  },
+  {
     "plugin_id": "jt.command-palette",
     "name": "Command Palette (fzf)",
     "version": "0.1.0",
