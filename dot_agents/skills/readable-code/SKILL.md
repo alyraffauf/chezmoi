@@ -1,6 +1,6 @@
 ---
 name: readable-code
-description: Readable, maintainable code standards. Use when writing, editing, reviewing, or discussing any source code.
+description: Readable, maintainable code standards. Use when writing or reviewing source code.
 ---
 
 # Readable & Scalable Code Standards
@@ -11,7 +11,7 @@ description: Readable, maintainable code standards. Use when writing, editing, r
 
 > **Names are the primary interface for understanding code.**
 
-- **Reveal intent.** A name should answer *why* it exists and *how* it is used.
+- **Reveal intent.** A name should answer _why_ it exists and _how_ it is used.
 - **Avoid abbreviations.** `customerAddress` not `custAddr`.
 - **Avoid single-letter names** unless they are the **universal idiomatic convention** for that language (e.g., `i`/`j` for loop indices in C-style languages, `e` for error in Go, `T` for type parameters in generics). When in doubt, spell it out.
 - **No leetcode-style shortcuts.** `currentNode` not `curr`; `previousValue` not `prev`; `result` not `res`; `answer` not `ans`.
@@ -54,7 +54,7 @@ description: Readable, maintainable code standards. Use when writing, editing, r
 
   ✅  counter += 1;
   ```
-- **Do not write tutorials in comments.** Assume the reader knows the language. Explain *why* a non-obvious choice was made, not *what* the syntax does.
+- **Do not write tutorials in comments.** Assume the reader knows the language. Explain _why_ a non-obvious choice was made, not _what_ the syntax does.
 - **Do not leave commented-out code.** Delete it. Git remembers.
 
 - **Use simple, direct clauses in comments.** Prefer imperative style. Write `Retry on timeout` not `This will retry the operation if a timeout occurs`. Comments should be brief and to the point.
@@ -66,12 +66,12 @@ description: Readable, maintainable code standards. Use when writing, editing, r
 
 **Stop and think.**
 
-| Question | Why it matters |
-|----------|----------------|
-| What imports this file? | Signatures changes may break callers. |
+| Question                    | Why it matters                                        |
+| --------------------------- | ----------------------------------------------------- |
+| What imports this file?     | Signatures changes may break callers.                 |
 | What does this file import? | Changing an interface may require downstream updates. |
-| What tests cover this? | Tests will fail if behavior changes. |
-| Is this shared code? | A change here affects many places. |
+| What tests cover this?      | Tests will fail if behavior changes.                  |
+| Is this shared code?        | A change here affects many places.                    |
 
 > **Rule:** Edit the file AND all dependent files in the same task. Never leave broken imports, missing updates, or orphaned references.
 
@@ -79,15 +79,15 @@ description: Readable, maintainable code standards. Use when writing, editing, r
 
 ## AI Coding Style
 
-| Situation | Action |
-|-----------|--------|
-| User asks for a feature | Write it directly and clearly. Consider how it fits the existing architecture. |
-| User reports a bug | Fix it. Do not explain the fix unless asked. Check if the root cause affects other areas. |
-| No clear requirement | Ask, do not assume. |
-| Multiple valid approaches | Choose the most readable and the one that respects existing boundaries, not the most impressive. |
+| Situation                              | Action                                                                                                                               |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| User asks for a feature                | Write it directly and clearly. Consider how it fits the existing architecture.                                                       |
+| User reports a bug                     | Fix it. Do not explain the fix unless asked. Check if the root cause affects other areas.                                            |
+| No clear requirement                   | Ask, do not assume.                                                                                                                  |
+| Multiple valid approaches              | Choose the most readable and the one that respects existing boundaries, not the most impressive.                                     |
 | User asks about architecture or design | Explain tradeoffs concisely. Recommend the approach that minimizes future maintenance burden and cognitive load, not the most novel. |
-| Encountering messy existing code | Follow the Boy Scout rule: leave it cleaner. But do not refactor unrelated code without permission. |
-| Performance vs. readability tension | Default to readability. Optimize only when there is measurable evidence of a bottleneck, not on speculation. |
+| Encountering messy existing code       | Follow the Boy Scout rule: leave it cleaner. But do not refactor unrelated code without permission.                                  |
+| Performance vs. readability tension    | Default to readability. Optimize only when there is measurable evidence of a bottleneck, not on speculation.                         |
 
 ---
 
