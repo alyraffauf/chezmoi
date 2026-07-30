@@ -1,0 +1,9 @@
+# Shared Ghostty configuration.
+window-decoration = client
+theme = Catppuccin Frappe
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS-only glass effect and global quick terminal.
+background-blur = true
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+{{- end }}
