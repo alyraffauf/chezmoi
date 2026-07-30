@@ -31,6 +31,10 @@ status is-interactive; and begin
         fish_add_path --prepend "$HOME/.nix-profile/bin"
     end
 
+    if command -q nix-your-shell
+        nix-your-shell fish | source
+    end
+
     # Set up Homebrew environment if available
     set -l homebrew_prefix ""
 
