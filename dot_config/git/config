@@ -28,6 +28,10 @@
 	helper =
 	helper = !gh auth git-credential
 
+[credential "https://knot1.tangled.sh"]
+	helper =
+	helper = !tg auth git-credential
+
 [init]
 	defaultBranch = main
 
