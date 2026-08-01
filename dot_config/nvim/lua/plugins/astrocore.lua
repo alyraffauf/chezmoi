@@ -26,12 +26,13 @@ return {
     filetypes = {
       -- see `:h vim.filetype.add` for usage
       extension = {
-        foo = "fooscript",
+        bu = "yaml", -- Butane is YAML
       },
       filename = {
         [".foorc"] = "fooscript",
       },
       pattern = {
+        [".*%.bu%.tmpl"] = "yaml",
         [".*/etc/foo/.*"] = "fooscript",
       },
     },
