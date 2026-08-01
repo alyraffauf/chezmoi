@@ -1,10 +1,10 @@
 (
     save_location: Pictures,
-    choice: Rectangle,
+    choice: Output(Some("DP-2")),
     last_rectangle: Some((
-        left: 228,
-        top: 542,
-        right: 889,
-        bottom: 890,
+        left: 788,
+        top: 474,
+        right: 1335,
+        bottom: 677,
     )),
 )

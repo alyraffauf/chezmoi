@@ -1,3 +1,3 @@
 {
-    Terminal: "/home/linuxbrew/.linuxbrew/bin/ghostty",
+    Terminal: "cosmic-term",
 }
