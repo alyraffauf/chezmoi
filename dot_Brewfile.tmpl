@@ -19,6 +19,9 @@ brew "fish"
 brew "fzf"
 brew "gh"
 brew "git"
+{{ if eq .chezmoi.os "linux" -}}
+brew "git-credential-libsecret"
+{{ end -}}
 brew "git-delta"
 brew "go"
 brew "gopls"
