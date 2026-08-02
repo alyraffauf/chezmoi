@@ -81,3 +81,7 @@
 	amend = commit --amend --no-edit
 	undo = reset --soft HEAD^
 	gone = !git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs -r git branch -d
+[credential "https://forgejo.narwhal-snapper.ts.net"]
+	username = alyraffauf
+[credential]
+	helper = libsecret
