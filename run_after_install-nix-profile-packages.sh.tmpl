@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! command -v nix >/dev/null; then exit 0; fi
+
+packages=(
+{{- range .nixPackages }}
+  "{{ . }}"
+{{- end }}
+)
+
+installed_packages=$(nix profile list --json)
+
+for package in "${packages[@]}"; do
+  if [[ $installed_packages == *"\"$package\""* ]]; then continue; fi
+
+  nix profile add "nixpkgs#$package"
+done

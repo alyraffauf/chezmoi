@@ -1,0 +1,6 @@
+{
+  "nixPackages": [
+    "deadnix",
+    "nixd"
+  ]
+}
