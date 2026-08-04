@@ -255,13 +255,14 @@
   ],
   "macos_dock_apps": [
     "/System/Applications/Apps.app",
+    "/Applications/Zen.app",
     "/Applications/Helium.app",
+    "/Applications/Mail.app",
     "/Applications/Signal.app",
+    "/Applications/Hermes.app",
     "/Applications/Vesktop.app",
     "/Applications/Obsidian.app",
-    "/Applications/Zed.app",
     "/Applications/Ghostty.app",
-    "/Applications/Cider.app",
     "/Applications/Plexamp.app",
     "/System/Applications/iPhone Mirroring.app"
   ]
