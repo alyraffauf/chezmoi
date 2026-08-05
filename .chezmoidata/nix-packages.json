@@ -1,6 +1,3 @@
 {
-  "nixPackages": [
-    "deadnix",
-    "nixd"
-  ]
+  "nixPackages": ["deadnix", "nixd", "nix-direnv", "nix-your-shell", "statix"]
 }
