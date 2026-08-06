@@ -52,7 +52,7 @@
       "domain": "com.apple.dock",
       "key": "show-recents",
       "type": "bool",
-      "value": "true"
+      "value": "false"
     },
     {
       "domain": "com.apple.dock",
@@ -256,12 +256,9 @@
   "macos_dock_apps": [
     "/System/Applications/Apps.app",
     "/Applications/Zen.app",
-    "/Applications/Helium.app",
     "/System/Applications/Mail.app",
     "/Applications/Signal.app",
-    "/Applications/Hermes.app",
     "/Applications/Vesktop.app",
-    "/Applications/Obsidian.app",
     "/Applications/Ghostty.app",
     "/Applications/Plexamp.app",
     "/System/Applications/iPhone Mirroring.app"
