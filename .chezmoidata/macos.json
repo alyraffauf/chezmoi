@@ -16,7 +16,7 @@
       "domain": "com.apple.dock",
       "key": "autohide",
       "type": "bool",
-      "value": "true"
+      "value": "false"
     },
     {
       "domain": "com.apple.dock",
