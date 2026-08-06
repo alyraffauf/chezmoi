@@ -50,6 +50,12 @@
     },
     {
       "domain": "com.apple.dock",
+      "key": "show-process-indicators",
+      "type": "bool",
+      "value": "true"
+    },
+    {
+      "domain": "com.apple.dock",
       "key": "show-recents",
       "type": "bool",
       "value": "false"
