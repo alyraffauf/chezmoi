@@ -1,6 +1,6 @@
 ---
 name: readable-code
-description: Readable, maintainable code standards. Use when writing or reviewing source code.
+description: Readable, maintainable code standards. Use when writing source code.
 ---
 
 # Readable & Scalable Code Standards

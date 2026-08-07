@@ -1,45 +1,4 @@
 {
-  "language_models": {
-    "openai_compatible": {
-      "Umans": {
-        "api_url": "https://api.code.umans.ai/v1",
-        "available_models": [
-          {
-            "name": "umans-kimi-k2.7",
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "reasoning_effort": "high",
-            "capabilities": {
-              "tools": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "chat_completions": true,
-              "interleaved_reasoning": false,
-              "max_tokens_parameter": true
-            }
-          },
-          {
-            "name": "umans-glm-5.2",
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "reasoning_effort": "xhigh",
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "chat_completions": true,
-              "interleaved_reasoning": false,
-              "max_tokens_parameter": false
-            }
-          }
-        ]
-      }
-    }
-  },
   "git": {
     "inline_blame": {
       "show_commit_summary": false
@@ -104,7 +63,7 @@
       "default_config_options": {
         "mode": "build",
         "effort": "max",
-        "model": "umans-ai-coding-plan/umans-glm-5.2"
+        "model": "opencode-go/glm-5.2"
       },
       "favorite_config_option_values": {
         "model": ["opencode-go/deepseek-v4-pro"]
@@ -171,8 +130,8 @@
     "default_profile": "write",
     "default_model": {
       "effort": "xhigh",
-      "provider": "Umans",
-      "model": "umans-glm-5.2",
+      "provider": "opencode-zen",
+      "model": "deepseek-v4-flash-free",
       "enable_thinking": true
     },
     "commit_message_instructions": "Follow the repo's existing commit message scheme. Limit message to one sentence. All lower case, prefix with location/feature affected by the change. Be curt yet still descriptive.",

@@ -1,6 +1,6 @@
 ---
 name: gh-cli
-description: Standardize all GitHub work via `gh` CLI (repos, issues, PRs, reviews, Actions, labels, releases) — never UI clicks or raw REST. Use `--json`/`--jq` for deterministic output. Trigger on any GitHub URL (incl. deep links like /pull/123, /issues/123, #issuecomment-…).
+description: Standardize all GitHub work via `gh` CLI (repos, issues, PRs, reviews, Actions, labels, releases). Trigger on any GitHub URL (incl. deep links like /pull/123, /issues/123, #issuecomment-…).
 ---
 
 # GitHub `gh` CLI

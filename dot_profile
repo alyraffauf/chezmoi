@@ -1,26 +1,35 @@
+# shellcheck shell=sh
+
 # ~/.profile
 #
 # Login/session-wide environment.
 # Keep interactive shell configuration in the shell-specific config
 # (~/.config/fish/config.fish, ~/.bashrc, etc.).
 
-# Add a directory to the front of PATH if it exists and isn't already there.
+# Add a directory to the front of PATH, removing existing entries first.
 path_prepend() {
     [ -d "$1" ] || return
 
-    case ":$PATH:" in
-        *":$1:"*) ;;
-        *) PATH="$1${PATH:+:$PATH}" ;;
-    esac
+    path_dir=$1
+    previous_ifs=$IFS
+    IFS=:
+    # shellcheck disable=SC2086
+    set -- $PATH
+    IFS=$previous_ifs
+
+    PATH=$path_dir
+    for existing_path_dir; do
+        [ "$existing_path_dir" = "$path_dir" ] && continue
+        PATH="$PATH:$existing_path_dir"
+    done
+
+    unset path_dir previous_ifs existing_path_dir
 }
 
 # Nix daemon environment
 if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
     . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
-
-# User Nix profile
-path_prepend "$HOME/.nix-profile/bin"
 
 # Homebrew
 #
@@ -46,8 +55,10 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 # User-installed development tools
+path_prepend "$HOME/.nix-profile/bin"
 path_prepend "$HOME/go/bin"
 path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/bin"
 path_prepend "$HOME/.bun/bin"
 path_prepend "$HOME/.cargo/bin"
 path_prepend "$HOME/.local/share/pnpm"
@@ -58,4 +69,3 @@ path_prepend "$HOME/.npm-global/bin"
 export PATH
 
 unset -f path_prepend 2>/dev/null || true
-```
