@@ -1,0 +1,46 @@
+# ~/.zshrc
+
+if [[ -z ${ZSH_PROFILE_SOURCED:-} && -r "$HOME/.profile" ]]; then
+    source "$HOME/.profile"
+fi
+
+if [[ $TERM_PROGRAM == ghostty ]]; then
+    export TERM=xterm-256color
+fi
+
+if (( $+commands[eza] )); then
+    alias eza='eza --icons auto --git --group-directories-first --header'
+    alias l='eza -lah'
+    alias la='eza -a'
+    alias ll='eza -l'
+    alias lla='eza -la'
+    alias ls=eza
+    alias lt='eza --tree'
+    alias tree='eza --tree'
+fi
+
+alias grep='grep --color=auto'
+
+if (( $+commands[direnv] )); then
+    eval "$(direnv hook zsh)"
+fi
+
+if (( $+commands[fzf] )); then
+    source <(fzf --zsh)
+fi
+
+if (( $+commands[atuin] )); then
+    eval "$(atuin init zsh --disable-up-arrow)"
+fi
+
+if (( $+commands[nix-your-shell] )); then
+    source <(nix-your-shell zsh)
+fi
+
+if (( $+commands[starship] )); then
+    eval "$(starship init zsh)"
+fi
+
+if (( $+commands[zoxide] )); then
+    eval "$(zoxide init zsh --cmd cd)"
+fi
